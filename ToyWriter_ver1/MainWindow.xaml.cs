@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 
+using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Reflection;
+
 
 namespace ToyWriter_ver1
 {
@@ -22,10 +25,13 @@ namespace ToyWriter_ver1
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        ObservableCollection<Car> listData;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             List<int> years = new List<int>();
@@ -33,7 +39,7 @@ namespace ToyWriter_ver1
             {
                 years.Add(i);
             }
-            comboYear.ItemsSource = years;
+            cbYear.ItemsSource = years;
 
             List<string> types = new List<string>();
             types.Add("Micro");
@@ -48,16 +54,44 @@ namespace ToyWriter_ver1
             types.Add("Supercar");
             types.Add("Campervan");
             types.Add("Truck");
-            comboType.ItemsSource = types;
+            cbType.ItemsSource = types;
         }
         private void btnPath_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                var dlg = new CommonOpenFileDialog();
+                dlg.Filters.Add(new CommonFileDialogFilter("xml", "xml"));
+                if (dlg.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    tbPath.Text = dlg.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An exception occurred from {MethodBase.GetCurrentMethod().Name}");
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var model = tbModel.Text;
+                var type = cbYear.SelectedItem as string;
+                var year = cbYear.SelectedItem as string;
+                var fuelType = tbFuelType.Text;
+                var color = tbColor.Text;
 
+                listData.Add(new Car(model, type, year, fuelType, color));
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An exception occurred from {MethodBase.GetCurrentMethod().Name}");
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)

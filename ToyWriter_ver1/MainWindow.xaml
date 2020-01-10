@@ -28,21 +28,22 @@
                     <TextBox x:Name="tbModel" Width="50"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Types" Margin="5,0"/>
-                    <!--<TextBox x:Name="tbCarte" Width="50"/>-->
-                    <ComboBox x:Name="comboType" SelectionChanged="comboYear_SelectionChanged" Width="100"/>
+                    <TextBlock Text="Type" Margin="5,0"/>
+                    <TextBox x:Name="tbType" Width="50"/>
+                    <ComboBox x:Name="cbType" SelectionChanged="comboYear_SelectionChanged" Width="100"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Year" Margin="5, 0"/>
-                    <!--<TextBox x:Name="tbYear" Width="50"/>-->
-                    <ComboBox x:Name="comboYear" SelectionChanged="comboYear_SelectionChanged" Width="100"/>
+                    <TextBox x:Name="tbYear" Width="50"/>
+                    <ComboBox x:Name="cbYear" SelectionChanged="comboYear_SelectionChanged" Width="100"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Fuel type" Margin="5, 0"/>
-                    <StackPanel Orientation="Horizontal">
-                        <RadioButton GroupName="Os" Content="gasoline" IsChecked="True"/>
-                        <RadioButton GroupName="Os" Content="diesel" />
-                        <RadioButton GroupName="Os" Content="LPG" />
+                    <TextBox x:Name="tbFuelType" Width="50" />
+                    <StackPanel Orientation="Horizontal" >
+                        <RadioButton Content="gasoline" IsChecked="True"/>
+                        <RadioButton Content="diesel" />
+                        <RadioButton Content="LPG" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -59,7 +60,10 @@
             <ListView.View>
                 <GridView AllowsColumnReorder="true">
                     <GridViewColumn Header="Model" Width="220" DisplayMemberBinding="{Binding Path=Model}" />
-                    <GridViewColumn Header="Cartegory" Width="160" DisplayMemberBinding="{Binding Path=Cartegory}" />
+                    <GridViewColumn Header="Type" Width="160" DisplayMemberBinding="{Binding Path=Type}" />
+                    <GridViewColumn Header="Year" Width="160" DisplayMemberBinding="{Binding Path=Year}" />
+                    <GridViewColumn Header="Fuel Type" Width="160" DisplayMemberBinding="{Binding Path=FuelType}" />
+                    <GridViewColumn Header="Color" Width="160" DisplayMemberBinding="{Binding Path=Color}" />
                 </GridView>
             </ListView.View>
         </ListView>
