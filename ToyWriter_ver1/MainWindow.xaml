@@ -28,23 +28,21 @@
                     <TextBox x:Name="tbModel" Width="50"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Cartegory" Margin="5,0"/>
-                    <TextBox x:Name="tbCarte" Width="50"/>
+                    <TextBlock Text="Types" Margin="5,0"/>
+                    <!--<TextBox x:Name="tbCarte" Width="50"/>-->
+                    <ComboBox x:Name="comboType" SelectionChanged="comboYear_SelectionChanged" Width="100"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Year" Margin="5, 0"/>
-                    <TextBox x:Name="tbYear" Width="50"/>
-                    <ComboBox x:Name="comboYear" SelectionChanged="comboYear_SelectionChanged" Width="120" >
-                        
-                    </ComboBox>
-
+                    <!--<TextBox x:Name="tbYear" Width="50"/>-->
+                    <ComboBox x:Name="comboYear" SelectionChanged="comboYear_SelectionChanged" Width="100"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Fuel type" Margin="5, 0"/>
                     <StackPanel Orientation="Horizontal">
-                        <RadioButton GroupName="Os" Content="" IsChecked="True"/>
-                        <RadioButton GroupName="Os" Content="Windows Vista" />
-                        <RadioButton GroupName="Os" Content="Windows 7" />
+                        <RadioButton GroupName="Os" Content="gasoline" IsChecked="True"/>
+                        <RadioButton GroupName="Os" Content="diesel" />
+                        <RadioButton GroupName="Os" Content="LPG" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">

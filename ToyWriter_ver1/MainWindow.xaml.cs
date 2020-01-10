@@ -34,14 +34,21 @@ namespace ToyWriter_ver1
                 years.Add(i);
             }
             comboYear.ItemsSource = years;
-            //listPerson.ItemsSource = listData;
-            //ComboBox comboYear = new ComboBox();
-            //for (int i = 1950; i <= DateTime.Today.Year; i++)
-            //{
-            //    ComboBoxItem item = new ComboBoxItem();
-            //    item.Content = i;
-            //    comboYear.Items.Add(item);
-            //}
+
+            List<string> types = new List<string>();
+            types.Add("Micro");
+            types.Add("Sedan");
+            types.Add("CUV");
+            types.Add("SUV");
+            types.Add("Hatchback");
+            types.Add("Wagon");
+            types.Add("Pickup truck");
+            types.Add("Van");
+            types.Add("Coupe");
+            types.Add("Supercar");
+            types.Add("Campervan");
+            types.Add("Truck");
+            comboType.ItemsSource = types;
         }
         private void btnPath_Click(object sender, RoutedEventArgs e)
         {
