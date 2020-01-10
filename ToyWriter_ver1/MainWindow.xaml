@@ -5,8 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToyWriter_ver1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1200"
+        Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Path" Grid.Row="0" Padding="5">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Xml File Path" Margin="5,0"/>
+                <TextBox x:Name="tbPath" IsReadOnly="True" Width="200"/>
+                <Button x:Name="btnPath" Width="40" Content="..." Margin="5,0" Click="btnPath_Click"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Input"  Grid.Row="1" Padding="5">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Model" Margin="5,0"/>
+                    <TextBox x:Name="tbModel" Width="50"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Cartegory" Margin="5,0"/>
+                    <TextBox x:Name="tbCarte" Width="50"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Year" Margin="5, 0"/>
+                    <TextBox x:Name="tbYear" Width="50"/>
+                    <ComboBox x:Name="comboYear" SelectionChanged="comboYear_SelectionChanged" Width="120" >
+                        
+                    </ComboBox>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Fuel type" Margin="5, 0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton GroupName="Os" Content="" IsChecked="True"/>
+                        <RadioButton GroupName="Os" Content="Windows Vista" />
+                        <RadioButton GroupName="Os" Content="Windows 7" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Color" Margin="5, 0"/>
+                    <TextBox x:Name="tbColor" Width="50" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnAdd" Width="40" Content="Add" Margin="5,0" Click="btnAdd_Click"/>
+                    <Button x:Name="btnDel" Width="40" Content="Del" Margin="5,0" Click="btnDel_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <ListView x:Name="listPerson" Grid.Row="2">
+            <ListView.View>
+                <GridView AllowsColumnReorder="true">
+                    <GridViewColumn Header="Model" Width="220" DisplayMemberBinding="{Binding Path=Model}" />
+                    <GridViewColumn Header="Cartegory" Width="160" DisplayMemberBinding="{Binding Path=Cartegory}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Window>
