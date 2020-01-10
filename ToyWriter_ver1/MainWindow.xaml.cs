@@ -103,5 +103,11 @@ namespace ToyWriter_ver1
         {
 
         }
+
+        private void rbFuelType1_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

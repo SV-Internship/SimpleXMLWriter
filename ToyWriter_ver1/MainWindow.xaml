@@ -29,21 +29,18 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Type" Margin="5,0"/>
-                    <TextBox x:Name="tbType" Width="50"/>
                     <ComboBox x:Name="cbType" SelectionChanged="comboYear_SelectionChanged" Width="100"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Year" Margin="5, 0"/>
-                    <TextBox x:Name="tbYear" Width="50"/>
                     <ComboBox x:Name="cbYear" SelectionChanged="comboYear_SelectionChanged" Width="100"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Fuel type" Margin="5, 0"/>
-                    <TextBox x:Name="tbFuelType" Width="50" />
                     <StackPanel Orientation="Horizontal" >
-                        <RadioButton Content="gasoline" IsChecked="True"/>
-                        <RadioButton Content="diesel" />
-                        <RadioButton Content="LPG" />
+                        <RadioButton x:Name="rbFuelType1"  Content="gasoline" IsChecked="True" Checked="rbFuelType1_Checked"/>
+                        <RadioButton Content="diesel" Checked="rbFuelType1_Checked"/>
+                        <RadioButton Content="LPG" Checked="rbFuelType1_Checked"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
