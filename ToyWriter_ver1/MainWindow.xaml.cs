@@ -94,7 +94,7 @@ namespace ToyWriter_ver1
                 tbModel.Text = "";
                 cbType.Text = "";
                 cbYear.Text = "";
-                tbColor.Text = "";
+                cpColor.SelectedColor = null;
 
             }
             catch (Exception ex)
@@ -130,10 +130,20 @@ namespace ToyWriter_ver1
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            XmlSerializer xs = new XmlSerializer(listData.GetType());
-            using (StreamWriter wr = new StreamWriter(tbPath.Text))
+            try
             {
-                xs.Serialize(wr, listData) ;
+                XmlSerializer xs = new XmlSerializer(listData.GetType());
+                using (StreamWriter wr = new StreamWriter(tbPath.Text))
+                {
+                    xs.Serialize(wr, listData);
+                }
+                MessageBox.Show("successed");
+                listData.Clear();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"An exception occurred from {MethodBase.GetCurrentMethod().Name}");
+                Console.WriteLine(ex.ToString());
             }
         }
     }
