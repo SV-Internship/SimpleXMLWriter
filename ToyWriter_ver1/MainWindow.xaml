@@ -19,6 +19,7 @@
                 <TextBlock Text="Xml File Path" Margin="5,0"/>
                 <TextBox x:Name="tbPath" IsReadOnly="True" Width="200"/>
                 <Button x:Name="btnPath" Width="40" Content="..." Margin="5,0" Click="btnPath_Click"/>
+                <Button x:Name="btnSave" Width="40" Content="Save" Margin="5,0" Click="btnSave_Click"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Header="Input"  Grid.Row="1" Padding="5">

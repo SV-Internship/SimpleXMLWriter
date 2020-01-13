@@ -1,6 +1,6 @@
 ﻿using System;
 
-internal class Car
+public class Car
 {
     public string Model { get; set; }
     public string Type { get; set; }
@@ -16,6 +16,7 @@ internal class Car
         this.FuelType = fuelType;
         this.Color = color;
     }
+    public Car() { }
 }
 
 

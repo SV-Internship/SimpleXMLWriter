@@ -16,7 +16,8 @@ using System.Collections.ObjectModel;
 
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Reflection;
-
+using System.Xml.Serialization;
+using System.IO;
 
 namespace ToyWriter_ver1
 {
@@ -123,6 +124,15 @@ namespace ToyWriter_ver1
         private void listCar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            XmlSerializer xs = new XmlSerializer(listData.GetType());
+            using (StreamWriter wr = new StreamWriter("test.xml"))
+            {
+                xs.Serialize(wr, listData) ;
+            }
         }
     }
 }
