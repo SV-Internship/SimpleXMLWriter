@@ -2,19 +2,19 @@
 
 internal class Car
 {
-    private string model { get; set; }
-    private string type { get; set; }
-    private int year { get; set; }
-    private string fuel_type { get; set; }
-    private string color { get; set; }
+    public string Model { get; set; }
+    public string Type { get; set; }
+    public int Year { get; set; }
+    public string FuelType { get; set; }
+    public string Color { get; set; }
 
-    public Car(string model, string type, string year, string fuel_type, string color)
+    public Car(string model, string type, string year, string fuelType, string color)
     {
-        this.model = model;
-        this.type = type;
-        this.year = Convert.ToInt32(year);
-        this.fuel_type = fuel_type;
-        this.color = color;
+        this.Model = model;
+        this.Type = type;
+        this.Year = Convert.ToInt32(year);
+        this.FuelType = fuelType;
+        this.Color = color;
     }
 }
 

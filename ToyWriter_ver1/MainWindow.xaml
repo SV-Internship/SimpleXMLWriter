@@ -53,7 +53,7 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
-        <ListView x:Name="listPerson" Grid.Row="2">
+        <ListView x:Name="listCar" Grid.Row="2">
             <ListView.View>
                 <GridView AllowsColumnReorder="true">
                     <GridViewColumn Header="Model" Width="220" DisplayMemberBinding="{Binding Path=Model}" />
@@ -64,6 +64,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
     </Grid>
 </Window>

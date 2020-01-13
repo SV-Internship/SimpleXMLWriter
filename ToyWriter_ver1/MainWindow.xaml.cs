@@ -32,8 +32,12 @@ namespace ToyWriter_ver1
         }
 
         ObservableCollection<Car> listData;
+        string rbFuelType;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            listData = new ObservableCollection<Car>();
+            listCar.ItemsSource = listData;
+                        
             List<int> years = new List<int>();
             for (int i=DateTime.Today.Year; i>=1950; i--)
             {
@@ -81,7 +85,7 @@ namespace ToyWriter_ver1
                 var model = tbModel.Text;
                 var type = cbYear.SelectedItem as string;
                 var year = cbYear.SelectedItem as string;
-                var fuelType = tbFuelType.Text;
+                var fuelType = rbFuelType;
                 var color = tbColor.Text;
 
                 listData.Add(new Car(model, type, year, fuelType, color));
@@ -96,7 +100,10 @@ namespace ToyWriter_ver1
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-
+            if(listCar.SelectedItem is Car car)
+            {
+                listData.Remove(car);
+            }
         }
 
         private void comboYear_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -106,8 +113,13 @@ namespace ToyWriter_ver1
 
         private void rbFuelType1_Checked(object sender, RoutedEventArgs e)
         {
-
+            RadioButton rb = sender as RadioButton;
+            rbFuelType = rb.Content as string;
         }
 
+        private void listCar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
