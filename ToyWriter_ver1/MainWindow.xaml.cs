@@ -87,7 +87,7 @@ namespace ToyWriter_ver1
                 var type = cbType.SelectedItem.ToString();
                 var year = cbYear.SelectedItem.ToString();
                 var fuelType = rbFuelType;
-                var color = tbColor.Text;
+                var color = cpColor.SelectedColor.ToString();
 
                 listData.Add(new Car(model, type, year, fuelType, color));
 
