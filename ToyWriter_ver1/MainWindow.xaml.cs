@@ -92,6 +92,8 @@ namespace ToyWriter_ver1
                 listData.Add(new Car(model, type, year, fuelType, color));
 
                 tbModel.Text = "";
+                cbType.Text = "";
+                cbYear.Text = "";
                 tbColor.Text = "";
 
             }
@@ -129,7 +131,7 @@ namespace ToyWriter_ver1
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             XmlSerializer xs = new XmlSerializer(listData.GetType());
-            using (StreamWriter wr = new StreamWriter("test.xml"))
+            using (StreamWriter wr = new StreamWriter(tbPath.Text))
             {
                 xs.Serialize(wr, listData) ;
             }
