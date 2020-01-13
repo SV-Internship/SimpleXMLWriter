@@ -83,12 +83,15 @@ namespace ToyWriter_ver1
             try
             {
                 var model = tbModel.Text;
-                var type = cbYear.SelectedItem as string;
-                var year = cbYear.SelectedItem as string;
+                var type = cbType.SelectedItem.ToString();
+                var year = cbYear.SelectedItem.ToString();
                 var fuelType = rbFuelType;
                 var color = tbColor.Text;
 
                 listData.Add(new Car(model, type, year, fuelType, color));
+
+                tbModel.Text = "";
+                tbColor.Text = "";
 
             }
             catch (Exception ex)
