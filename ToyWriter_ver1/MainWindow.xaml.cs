@@ -146,5 +146,10 @@ namespace ToyWriter_ver1
                 Console.WriteLine(ex.ToString());
             }
         }
+
+        private void listCar_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
