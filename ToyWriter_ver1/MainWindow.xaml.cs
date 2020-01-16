@@ -27,9 +27,13 @@ namespace ToyWriter_ver1
     public partial class MainWindow : Window
     {
 
+        private string test_string;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            test_string = "hello";
         }
 
         ObservableCollection<Car> listData;
