@@ -39,3 +39,7 @@ C:\Users\Stradvision\source\repos\SimpleXMLWriter_MVVM\SimpleXMLWriter_MVVM\obj\
 C:\Users\Stradvision\source\repos\SimpleXMLWriter_MVVM\SimpleXMLWriter_MVVM\obj\Debug\SimpleXMLWriter_MVVM.pdb
 C:\Users\Stradvision\source\repos\SimpleXMLWriter_MVVM\SimpleXMLWriter_MVVM\obj\Debug\View\InputView.g.cs
 C:\Users\Stradvision\source\repos\SimpleXMLWriter_MVVM\SimpleXMLWriter_MVVM\obj\Debug\View\InputView.baml
+C:\Users\Stradvision\source\repos\SimpleXMLWriter_MVVM\SimpleXMLWriter_MVVM\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Stradvision\source\repos\SimpleXMLWriter_MVVM\SimpleXMLWriter_MVVM\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Stradvision\source\repos\SimpleXMLWriter_MVVM\SimpleXMLWriter_MVVM\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Stradvision\source\repos\SimpleXMLWriter_MVVM\SimpleXMLWriter_MVVM\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml

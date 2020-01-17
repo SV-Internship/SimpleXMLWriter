@@ -1,16 +1,4 @@
-﻿<!--<Window x:Class="SimpleXMLWriter_MVVM.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SimpleXMLWriter_MVVM"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
-    <Grid>
-        
-    </Grid>
-</Window>-->
-<Window x:Class="SimpleXMLWriter_MVVM.MainWindow"
+﻿<Window x:Class="SimpleXMLWriter_MVVM.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -38,6 +26,7 @@
                 <TextBlock Text="Xml File Path" Margin="5,0"/>
                 <TextBox IsReadOnly="True" Width="200" Text="{Binding XmlPath}"/>
                 <Button Width="40" Content="..." Margin="5,0" Command="{Binding OpenPathCommand}"/>
+                <Button Width="40" Content="Save" Margin="5,0" Command="{Binding SavePathCommand}"/>
             </StackPanel>
         </GroupBox>
 

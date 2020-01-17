@@ -10,53 +10,121 @@ namespace SimpleXMLWriter_MVVM
     {
         private MainViewModel mainViewModel;
 
-        //public RelayCommand AddCommand { get; private set; }
-        //public RelayCommand DelCommand { get; private set; }
-        private string _name;
-        public string Name
+        public RelayCommand AddCommand { get; private set; }
+        public RelayCommand DelCommand { get; private set; }
+
+        private List<string> _types = new List<string>
+        {
+            "Micro",
+            "Sedan",
+            "CUV",
+            "SUV",
+            "Hatchback",
+            "Wagon",
+            "Pickup truck",
+            "Van",
+            "Coupe",
+            "Supercar",
+            "Campervan",
+            "Truck"
+        };
+        public List<string> Types
         {
             get
             {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                OnPropertyChanged("Name");
+                return _types;
             }
         }
 
-        private int _age;
-        public int Age
+        private string _model;
+        public string Model
         {
             get
             {
-                return _age;
+                return _model;
             }
             set
             {
-                _age = value;
-                OnPropertyChanged("Age");
+                _model = value;
+                OnPropertyChanged("Model");
             }
         }
 
+        private string _type;
+        public string Type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                _type = value;
+                OnPropertyChanged("Type");
+            }
+        }
 
-        //public InputViewModel(MainViewModel mainViewModel)
-        //{
-        //    this.mainViewModel = mainViewModel;
+        private int _year;
+        public int Year
+        {
+            get
+            {
+                return _year;
+            }
+            set
+            {
+                _year = value;
+                OnPropertyChanged("Year");
+            }
+        }
 
-        //    AddCommand = new RelayCommand(Add);
-        //    DelCommand = new RelayCommand(Del);
-        //}
+        private string _fuelType;
+        public string FuelType
+        {
+            get
+            {
+                return _fuelType;
+            }
+            set
+            {
+                _fuelType = value;
+                OnPropertyChanged("FuelType");
+            }
+        }
 
-        //private void Del()
-        //{
-        //    mainViewModel.DelItem();
-        //}
+        private string _color;
+        public string Color
+        {
+            get
+            {
+                return _color;
+            }
+            set
+            {
+                _color = value;
+                OnPropertyChanged("Color");
+            }
+        }
 
-        //private void Add()
-        //{
-        //    mainViewModel.AddItem(Name, Age);
-        //}
+        
+
+
+        public InputViewModel(MainViewModel mainViewModel)
+        {
+            this.mainViewModel = mainViewModel;
+
+            AddCommand = new RelayCommand(Add);
+            DelCommand = new RelayCommand(Del);
+        }
+
+        private void Del()
+        {
+            mainViewModel.DelItem();
+        }
+
+        private void Add()
+        {
+            mainViewModel.AddItem(Model, Type, Year, FuelType, Color);
+        }
     }
 }

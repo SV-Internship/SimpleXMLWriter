@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace SimpleXMLWriter_MVVM
 {
-    class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         private readonly Action _execute;
         private readonly Func<bool> _canExecute;
