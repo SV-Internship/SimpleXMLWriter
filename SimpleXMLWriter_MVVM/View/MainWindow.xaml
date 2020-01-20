@@ -31,7 +31,7 @@
         </GroupBox>
 
         <GroupBox Header="Input"  Grid.Row="1" Padding="5">
-            <local:InputView DataContext="{Binding InputVM}"/>
+            <local:InputView DataContext="{Binding InputVM}" Loaded="InputView_Loaded"/>
         </GroupBox>
 
         <ListView Grid.Row="2" ItemsSource="{Binding ListData}" SelectedItem="{Binding SelectedItem}">

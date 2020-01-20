@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace SimpleXMLWriter_MVVM
 {
@@ -33,6 +36,22 @@ namespace SimpleXMLWriter_MVVM
             get
             {
                 return _types;
+            }
+        }
+        private List<int> _years = new List<int>();
+        public List<int> Years
+        {
+            get
+            {
+                return _years;
+            }
+        }
+
+        private void initialYears()
+        {
+            for (int i = DateTime.Today.Year; i >= 1950; i--)
+            {
+                _years.Add(i);
             }
         }
 
@@ -115,6 +134,7 @@ namespace SimpleXMLWriter_MVVM
 
             AddCommand = new RelayCommand(Add);
             DelCommand = new RelayCommand(Del);
+            initialYears();
         }
 
         private void Del()
@@ -125,6 +145,12 @@ namespace SimpleXMLWriter_MVVM
         private void Add()
         {
             mainViewModel.AddItem(Model, Type, Year, FuelType, Color);
+        }
+
+        private void RBFuelCommand(object sender, RoutedEventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            FuelType = rb.Content as string;
         }
     }
 }

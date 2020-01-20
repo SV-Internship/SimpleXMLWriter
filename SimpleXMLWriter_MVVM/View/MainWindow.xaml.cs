@@ -24,5 +24,10 @@ namespace SimpleXMLWriter_MVVM
         {
             InitializeComponent();
         }
+
+        private void InputView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
