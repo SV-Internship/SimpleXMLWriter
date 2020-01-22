@@ -125,7 +125,7 @@ namespace SimpleXMLWriter_MVVM
             }
         }
 
-        
+
 
 
         public InputViewModel(MainViewModel mainViewModel)
@@ -147,10 +147,11 @@ namespace SimpleXMLWriter_MVVM
             mainViewModel.AddItem(Model, Type, Year, FuelType, Color);
         }
 
-        private void RBFuelCommand(object sender, RoutedEventArgs e)
+        public void RBFuel(object sender, RoutedEventArgs e)
         {
             RadioButton rb = sender as RadioButton;
             FuelType = rb.Content as string;
         }
     }
 }
+

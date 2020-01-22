@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:SimpleXMLWriter_MVVM"
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-      mc:Ignorable="d" 
+      xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
@@ -36,15 +37,29 @@
 
         <TextBlock Grid.Column="0" Grid.Row="3" Text="Fuel type :" Margin="5"/>
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Margin="5">
-            <RadioButton Margin="0,0,10,0" Content="gasoline" Name="rbGasoline"/>
-            <RadioButton Margin="0,0,10,0" Content="diesel" Name="rbDiesel"/>
-            <RadioButton Content="LPG" Name="rbLPG" />
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="IsChecked" >
-                    <i:InvokeCommandAction Command="{Binding RBFuelCommand}" CommandParameter ="{Binding ElementName=rbGasoline, Path=Content}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
+            <RadioButton Margin="0,0,10,0" Content="gasoline" Name="rbGasoline">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Checked">
+                        <ei:CallMethodAction TargetObject="{Binding}" MethodName="RBFuel" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+            <RadioButton Margin="0,0,10,0" Content="diesel" Name="rbDiesel">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Checked">
+                        <ei:CallMethodAction TargetObject="{Binding}" MethodName="RBFuel" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+            <RadioButton Content="LPG" Name="rbLPG">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Checked">
+                        <ei:CallMethodAction TargetObject="{Binding}" MethodName="RBFuel" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
         </StackPanel>
+            
 
 
         <TextBlock Grid.Column="0" Grid.Row="4" Text="Color :" Margin="5"/>
