@@ -88,9 +88,10 @@ namespace SimpleXMLWriter_MVVM
                 ListData.Remove(SelectedItem);
         }
 
-        public void AddItem(string model, string type, int year, string fuelType, string color)
+        public void AddItem(string model, string type, string year, string fuelType, string color)
         {
             ListData.Add(new Car(model, type, year, fuelType, color));
+
         }
     }
 }

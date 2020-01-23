@@ -83,8 +83,8 @@ namespace SimpleXMLWriter_MVVM
             }
         }
 
-        private int _year;
-        public int Year
+        private string _year;
+        public string Year
         {
             get
             {
@@ -145,6 +145,12 @@ namespace SimpleXMLWriter_MVVM
         private void Add()
         {
             mainViewModel.AddItem(Model, Type, Year, FuelType, Color);
+            Model = "";
+            Type = "";
+            Year = "";
+            FuelType = "";
+            Color = "";
+
         }
 
         public void RBFuel(object sender, RoutedEventArgs e)
